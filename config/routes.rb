@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :recipes
+
   root 'beer_styles#index'
 
   devise_for :users

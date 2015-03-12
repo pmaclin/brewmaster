@@ -1,0 +1,21 @@
+<%= simple_form_for(@recipe) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :name %>
+    <%= f.input :brew_type %>
+    <%= f.input :description %>
+    <%= f.input :target_original_gravity %>
+    <%= f.input :target_final_gravity %>
+    <%= f.input :target_abv %>
+    <%= f.input :target_aroma %>
+    <%= f.input :target_ibu %>
+    <%= f.input :label %>
+    <%= f.input :target_flavor_profile %>
+    <%= f.association :user %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>
