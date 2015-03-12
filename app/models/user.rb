@@ -10,4 +10,7 @@ class User < ActiveRecord::Base
 
   has_many :batches, :through => :uniques
   has_many :batches, :through => :reviews
+
+  validates :email, :presence => true, :uniqueness => true
+  validates :username, :presence => true, :uniqueness => true
 end
