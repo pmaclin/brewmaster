@@ -1,5 +1,11 @@
+/*$brand-primary: #128;*/
+
+@import "_variables.scss";
+
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+@import "_bootswatch.scss";
 
 @import "font-awesome-sprockets";
 @import "font-awesome";
