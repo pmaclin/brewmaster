@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :reviews
+
   resources :recipes
 
   root 'beer_styles#index'
