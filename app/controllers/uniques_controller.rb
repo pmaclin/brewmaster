@@ -71,6 +71,6 @@ class UniquesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def unique_params
-      params.require(:unique).permit(:rand_num, :batch_id, :user_id)
+      params.require(:unique).permit(:rand_num, :batch_id)
     end
 end
