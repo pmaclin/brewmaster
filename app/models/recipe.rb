@@ -6,7 +6,7 @@ class Recipe < ActiveRecord::Base
   has_many :beer_styles, :through => :batches
 
   validates :user, :presence => true, :uniqueness => true
-  validates :name, :presence => true
+  validates :name, :presence => true, :uniqueness => { :sope => :user}
   validates :brew_type, :presence => true
 
 end
