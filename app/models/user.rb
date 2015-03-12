@@ -7,4 +7,7 @@ class User < ActiveRecord::Base
   has_many :recipes
   has_many :reviews
   has_many :uniques
+
+  has_many :batches, :through => :uniques
+  has_many :batches, :through => :reviews
 end
