@@ -11,7 +11,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150312062236) do
+ActiveRecord::Schema.define(version: 20150312151843) do
+
+  create_table "batches", force: :cascade do |t|
+    t.string   "size"
+    t.string   "brew_date"
+    t.string   "bottle_date"
+    t.float    "actual_original_gravity"
+    t.float    "actual_final_gravity"
+    t.float    "actual_abv"
+    t.string   "actual_aroma"
+    t.integer  "actual_ibu"
+    t.string   "image"
+    t.text     "actual_flavor_profile"
+    t.integer  "beer_style_id"
+    t.integer  "recipe_id"
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
+  end
+
+  add_index "batches", ["beer_style_id"], name: "index_batches_on_beer_style_id"
+  add_index "batches", ["recipe_id"], name: "index_batches_on_recipe_id"
 
   create_table "beer_styles", force: :cascade do |t|
     t.string   "name"
@@ -20,6 +40,52 @@ ActiveRecord::Schema.define(version: 20150312062236) do
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
   end
+
+  create_table "recipes", force: :cascade do |t|
+    t.string   "name"
+    t.string   "brew_type"
+    t.text     "description"
+    t.float    "target_original_gravity"
+    t.float    "target_final_gravity"
+    t.float    "target_abv"
+    t.string   "target_aroma"
+    t.integer  "target_ibu"
+    t.string   "label"
+    t.text     "target_flavor_profile"
+    t.integer  "user_id"
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
+  end
+
+  add_index "recipes", ["user_id"], name: "index_recipes_on_user_id"
+
+  create_table "reviews", force: :cascade do |t|
+    t.integer  "taste"
+    t.integer  "aroma"
+    t.integer  "appearance"
+    t.string   "headline"
+    t.integer  "overall_score"
+    t.boolean  "like_dislike"
+    t.text     "review"
+    t.integer  "user_id"
+    t.integer  "batch_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
+
+  add_index "reviews", ["batch_id"], name: "index_reviews_on_batch_id"
+  add_index "reviews", ["user_id"], name: "index_reviews_on_user_id"
+
+  create_table "uniques", force: :cascade do |t|
+    t.integer  "rand_num"
+    t.integer  "batch_id"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "uniques", ["batch_id"], name: "index_uniques_on_batch_id"
+  add_index "uniques", ["user_id"], name: "index_uniques_on_user_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
