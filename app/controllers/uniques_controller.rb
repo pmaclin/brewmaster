@@ -25,6 +25,8 @@ class UniquesController < ApplicationController
   # POST /uniques.json
   def create
     @unique = Unique.new(unique_params)
+    # set manually the user using the current_user method from devise
+    @unique.user = current_user
 
     respond_to do |format|
       if @unique.save

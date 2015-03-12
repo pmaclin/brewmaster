@@ -25,6 +25,8 @@ class ReviewsController < ApplicationController
   # POST /reviews.json
   def create
     @review = Review.new(review_params)
+    # set manually the user using the current_user method from devise
+    @review.user = current_user
 
     respond_to do |format|
       if @review.save

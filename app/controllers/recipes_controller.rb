@@ -25,6 +25,8 @@ class RecipesController < ApplicationController
   # POST /recipes.json
   def create
     @recipe = Recipe.new(recipe_params)
+    # set manually the user using the current_user method from devise
+    @recipe.user = current_user
 
     respond_to do |format|
       if @recipe.save
