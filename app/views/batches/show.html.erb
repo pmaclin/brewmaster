@@ -1,0 +1,64 @@
+<!-- Responsive panel example-->
+
+<div class="row">
+  <div class="col-sm-offset-1 col-sm-10 col-md-offset-2 col-md-8">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">Batch #<%= @batch.id %></h3>
+      </div>
+      <div class="panel-body">
+        <div class="row">
+          <div class="col-md-12">
+            <dl class="dl-horizontal">
+              <dt>Size</dt>
+              <dd><%= @batch.size %></dd>
+
+              <dt>Brew date</dt>
+              <dd><%= @batch.brew_date %></dd>
+
+              <dt>Bottle date</dt>
+              <dd><%= @batch.bottle_date %></dd>
+
+              <dt>Actual original gravity</dt>
+              <dd><%= @batch.actual_original_gravity %></dd>
+
+              <dt>Actual final gravity</dt>
+              <dd><%= @batch.actual_final_gravity %></dd>
+
+              <dt>Actual abv</dt>
+              <dd><%= @batch.actual_abv %></dd>
+
+              <dt>Actual aroma</dt>
+              <dd><%= @batch.actual_aroma %></dd>
+
+              <dt>Actual ibu</dt>
+              <dd><%= @batch.actual_ibu %></dd>
+
+              <dt>Image</dt>
+              <dd><%= @batch.image %></dd>
+
+              <dt>Actual flavor profile</dt>
+              <dd><%= @batch.actual_flavor_profile %></dd>
+
+              <dt>Beer style</dt>
+              <dd><%= @batch.beer_style %></dd>
+
+              <dt>Recipe</dt>
+              <dd><%= @batch.recipe %></dd>
+
+            </dl>
+            <div class="btn-group btn-group-justified">
+              <%= link_to icon('chevron-left'), batches_path, class: "btn btn-primary" %>
+
+              <%= link_to icon('edit'), edit_batch_path(@batch), class: "btn btn-warning" %>
+
+              <%= link_to icon('trash-o'), @batch, method: :delete, data: { confirm: "Do you really want to delete this batch?" }, class: "btn btn-danger" %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- End responsive panel example -->
