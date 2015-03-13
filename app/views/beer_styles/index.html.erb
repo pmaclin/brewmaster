@@ -1,6 +1,6 @@
 <div class="page-header">
   <h1>
-    Beer Styles
+    Beer Styles!
     <%= link_to icon('plus'), new_beer_style_path, class: "btn btn-lg btn-success" %>
   </h1>
 </div>
@@ -17,20 +17,18 @@
 
 <div class="row isotope-container">
 <% @beer_styles.each do |beer_style| %>
-  <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 isotope-item">
+  <div class="col-xs-12 col-sm-6 col-md-4 col-lg-12
+   isotope-item">
     <div class="panel panel-default">
       <div class="panel-heading">
-        <h3 class="panel-title">Beer Style #<%= beer_style.id %></h3>
+        <h3 class="panel-title"><%= beer_style.name %></h3>
       </div>
       <div class="panel-body">
         <dl>
-          <dt>Name</dt>
-          <dd><%= beer_style.name %></dd>
-
-          <dt>Std flav profile</dt>
+          <dt>flavor profile</dt>
           <dd><%= beer_style.std_flav_profile %></dd>
 
-          <dt>Image</dt>
+          <!-- <dt>Image</dt> -->
           <dd><%= beer_style.image %></dd>
 
         </dl>

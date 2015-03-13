@@ -17,13 +17,23 @@
 
 <div class="row isotope-container">
 <% @batches.each do |batch| %>
-  <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 isotope-item">
+  <div class="col-xs-12 col-sm-6 col-md-4 col-lg-6 isotope-item">
     <div class="panel panel-default">
       <div class="panel-heading">
         <h3 class="panel-title">Batch #<%= batch.id %></h3>
       </div>
       <div class="panel-body">
+      <!-- As a user, I want all of the beers (batches) that I've reviewed to show here. -->
+      <%# r = Review.where({ :batch_id => batch.id, :user_id => current_user.id }) %>
+      <%# if r.any? %>
+        <!-- <p class="lead"><%#= r.batch.name %></p> -->
+      <%# else %>
+        <!-- Hey, what gives? You have no reviews! You better start drinking! -->
+      <%# end %>
         <dl>
+          <dt>Brew Name</dt>
+          <dd><%= batch.recipe %></dd>
+
           <dt>Size</dt>
           <dd><%= batch.size %></dd>
 
@@ -56,9 +66,6 @@
 
           <dt>Beer style</dt>
           <dd><%= batch.beer_style.name %></dd>
-
-          <dt>Recipe</dt>
-          <dd><%= batch.recipe.name %></dd>
 
         </dl>
         <div class="btn-group btn-group-justified">

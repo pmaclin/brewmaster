@@ -20,13 +20,10 @@
   <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 isotope-item">
     <div class="panel panel-default">
       <div class="panel-heading">
-        <h3 class="panel-title">Recipe #<%= recipe.id %></h3>
+        <h3 class="panel-title"><%= recipe.name %></h3>
       </div>
       <div class="panel-body">
         <dl>
-          <dt>Name</dt>
-          <dd><%= recipe.name %></dd>
-
           <dt>Brew type</dt>
           <dd><%= recipe.brew_type %></dd>
 
@@ -55,7 +52,7 @@
           <dd><%= recipe.target_flavor_profile %></dd>
 
 <!--           <dt>User</dt>
-          <dd><%= recipe.user.email %></dd> -->
+          <dd><%#= recipe.user.email %></dd> -->
 
         </dl>
         <div class="btn-group btn-group-justified">

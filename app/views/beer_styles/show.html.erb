@@ -4,19 +4,16 @@
   <div class="col-sm-offset-1 col-sm-10 col-md-offset-2 col-md-8">
     <div class="panel panel-default">
       <div class="panel-heading">
-        <h3 class="panel-title">Beer Style #<%= @beer_style.id %></h3>
+        <h3 class="panel-title"><%= @beer_style.name %></h3>
       </div>
       <div class="panel-body">
         <div class="row">
           <div class="col-md-12">
             <dl class="dl-horizontal">
-              <dt>Name</dt>
-              <dd><%= @beer_style.name %></dd>
-
-              <dt>Std flav profile</dt>
+              <dt>flavor profile</dt>
               <dd><%= @beer_style.std_flav_profile %></dd>
 
-              <dt>Image</dt>
+              <!-- <dt>Image</dt> -->
               <dd><%= @beer_style.image %></dd>
 
             </dl>
