@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   root 'recipes#index'
+  # 'devise/registrations#edit'
 
   resources :batches
 
@@ -10,6 +11,7 @@ Rails.application.routes.draw do
   resources :recipes
 
   devise_for :users
+
   resources :beer_styles
 
 end

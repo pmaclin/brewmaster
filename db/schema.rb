@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150312151843) do
+ActiveRecord::Schema.define(version: 20150314184516) do
 
   create_table "batches", force: :cascade do |t|
     t.string   "size"
@@ -55,6 +55,7 @@ ActiveRecord::Schema.define(version: 20150312151843) do
     t.integer  "user_id"
     t.datetime "created_at",              null: false
     t.datetime "updated_at",              null: false
+    t.integer  "beer_style_id"
   end
 
   add_index "recipes", ["user_id"], name: "index_recipes_on_user_id"
