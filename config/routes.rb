@@ -10,7 +10,9 @@ Rails.application.routes.draw do
 
   resources :recipes
 
-  devise_for :users
+  devise_for :users, controllers: {
+        sessions: 'sessions'
+      }
 
   resources :beer_styles
 
