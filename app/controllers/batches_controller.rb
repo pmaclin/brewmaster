@@ -1,6 +1,14 @@
 class BatchesController < ApplicationController
   before_action :set_batch, only: [:show, :edit, :update, :destroy]
 
+  before_action :current_user_must_own_batch, only:[:edit, :update, :destroy, :show]
+
+  def current_user_must_own_batch
+    if current_user != @batch.recipe.user
+        redirect_to :back, :notice => "Dude...you can't do that."
+    end
+  end
+
   # GET /batches
   # GET /batches.json
   def index

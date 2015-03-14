@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root 'beer_styles#index'
+  root 'recipes#index'
 
   resources :batches
 

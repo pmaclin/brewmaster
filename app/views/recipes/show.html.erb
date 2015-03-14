@@ -38,7 +38,7 @@
               <dd><%= @recipe.target_flavor_profile %></dd>
 
 <!--               <dt>User</dt>
-              <dd><%= @recipe.user.email %></dd> -->
+              <dd><%#= @recipe.user.email %></dd> -->
 
             </dl>
             <div class="btn-group btn-group-justified">
@@ -54,5 +54,9 @@
     </div>
   </div>
 </div>
+                <dt>No. of batches created: <%= @recipe.batches.count %></dt>
+                <%#= @recipe.beer_styles.each do |beer_style| %>
+                <dt>Beer Style:
+                <%#= batch.beer_style.name %></dt>
 
 <!-- End responsive panel example -->
