@@ -18,14 +18,17 @@
 <div class="row isotope-container">
 <% @recipes.each do |recipe| %>
   <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 isotope-item">
+    <% if recipe.user == current_user %>
     <div class="panel panel-default">
       <div class="panel-heading">
-        <h3 class="panel-title"><%= recipe.name %></h3>
+        <h3 class="panel-title">
+        <%= recipe.name %></h3>
       </div>
+
       <div class="panel-body">
         <dl>
-          <dt><b>BREW TYPE:</b> <%= recipe.brew_type %></dt>
-          <dt><b>FLAVOR PROFILE:</b> <%= recipe.target_flavor_profile %></dt>
+          <dt><b>BREW TYPE:</b> <small><%= recipe.brew_type %></small></dt>
+          <dt><b>FLAVOR PROFILE:</b> <small><%= recipe.target_flavor_profile %></small></dt>
           <dt>BEER STYLE:</dt> <%#= recipe.beer_style.name.findy_by( :beer_style_id => beer_style.id ) %>
 
           <!-- dt>Description</dt>
@@ -56,6 +59,8 @@
           <dd><%#= recipe.user.email %></dd> -->
 
         </dl>
+
+
         <div class="btn-group btn-group-justified">
           <%= link_to icon('search-plus'), recipe, class: "btn btn-primary" %>
 
@@ -63,11 +68,16 @@
 
           <%= link_to icon('trash-o'), recipe, method: :delete, data: { confirm: "Do you really want to delete this recipe?" }, class: "btn btn-danger" %>
         </div>
+
       </div>
+
     </div>
+    <% end %>
   </div>
+
 <% end %>
 </div>
+
 
 <!-- JavaScript for Isotope layout and quicksearch -->
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/3.1.8/imagesloaded.pkgd.min.js"></script>

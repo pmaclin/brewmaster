@@ -3,6 +3,13 @@ class BatchesController < ApplicationController
 
   before_action :current_user_must_own_batch, only:[:edit, :update, :destroy, :show]
 
+  # def create_unique_ids
+  #   @batch = Batch.new(recipe_params)
+  #   u = SecureRandom.random_number(1000000000)
+  #   10.times do |u|
+  #     print u
+  # end
+
   def current_user_must_own_batch
     if current_user != @batch.recipe.user
         redirect_to :back, :notice => "Dude...you can't do that."

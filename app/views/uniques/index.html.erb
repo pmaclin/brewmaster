@@ -31,9 +31,19 @@
           <dd><%= unique.batch %></dd>
 
 <!--           <dt>User</dt>
-          <dd><%= unique.user.email %></dd> -->
+          <dd><%#= unique.user.email %></dd> -->
+
 
         </dl>
+
+        <!-- We will need to use form_for because we're going to be updating a row in the Unique table. The user will use a form to submit a unique number. That will trigger an action in the Unique controller.  -->
+        <!-- Example Code -->
+        <!-- There needs to be inputs for all required columns in this table -->
+        <%#= form_for Unique.new do |u| %>
+        <%#= f.text_field :content, class => "form-control", :placeholder => "Enter Brew ID" %>
+        <%# end %>
+
+
         <div class="btn-group btn-group-justified">
           <%= link_to icon('search-plus'), unique, class: "btn btn-primary" %>
 
