@@ -7,8 +7,9 @@ class Batch < ActiveRecord::Base
 
   has_many :users, :through => :reviews
   has_many :users, :through => :uniques
+  # belongs_to :users, :through => :recipes
 
-  #validates :user, :presence => true
+  # validates :user, :presence => true
   validates :size, :presence => true
   validates :brew_date, :presence => true
   validates :bottle_date, :presence => true

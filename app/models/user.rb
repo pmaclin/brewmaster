@@ -8,7 +8,8 @@ class User < ActiveRecord::Base
   has_many :reviews
   has_many :uniques
 
-  has_many :batches, :through => :uniques
-  has_many :batches, :through => :reviews
+  # has_many :batches, :through => :uniques
+  # has_many :batches, :through => :reviews
+  has_many :batches, :through => :recipes
 
 end
