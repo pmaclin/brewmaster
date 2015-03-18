@@ -4,12 +4,13 @@
   <div class="col-sm-offset-1 col-sm-10 col-md-offset-2 col-md-8">
     <div class="panel panel-default">
       <div class="panel-heading">
-        <h3 class="panel-title"><%= @recipe.name %></h3>
+        <h3 class="panel-title"><%= @recipe.name %><dd class="hidden"><%= @recipe.id %></dd></h3>
       </div>
       <div class="panel-body">
         <div class="row">
           <div class="col-md-12">
             <dl class="dl-horizontal">
+
               <dt>Brew type</dt>
               <dd><%= @recipe.brew_type %></dd>
 
@@ -37,7 +38,7 @@
               <dt>Target flavor profile</dt>
               <dd><%= @recipe.target_flavor_profile %></dd>
 
-<!--               <dt>User</dt>
+<!--          <dt>User</dt>
               <dd><%#= @recipe.user.email %></dd> -->
 
             </dl>
@@ -47,6 +48,8 @@
               <%= link_to icon('edit'), edit_recipe_path(@recipe), class: "btn btn-warning" %>
 
               <%= link_to icon('trash-o'), @recipe, method: :delete, data: { confirm: "Do you really want to delete this recipe?" }, class: "btn btn-danger" %>
+
+              <%= link_to icon('chevron-right'), new_batch_path({ :recipe_id => @recipe.id }), class: "btn btn-success" %>
             </div>
           </div>
         </div>
@@ -54,9 +57,5 @@
     </div>
   </div>
 </div>
-                <dt>No. of batches created: <%= @recipe.batches.count %></dt>
-                <%#= @recipe.beer_styles.each do |beer_style| %>
-                <dt>Beer Style:
-                <%#= batch.beer_style.name %></dt>
 
 <!-- End responsive panel example -->

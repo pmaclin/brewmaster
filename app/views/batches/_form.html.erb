@@ -5,6 +5,7 @@
     <%= f.input :size %>
     <%= f.input :brew_date %>
     <%= f.input :bottle_date %>
+    <%= f.association :beer_style %>
     <%= f.input :actual_original_gravity %>
     <%= f.input :actual_final_gravity %>
     <%= f.input :actual_abv %>
@@ -12,11 +13,16 @@
     <%= f.input :actual_ibu %>
     <%= f.input :image %>
     <%= f.input :actual_flavor_profile %>
-    <%= f.association :beer_style %>
-    <%= f.association :recipe %>
+    <%= f.association :recipe %> <!-- Recipe.where({:user_id => current_user.id }) -->
+    <%#= f.select :recipe_id, options_from_collection_for_select(Recipe.all, :id, :name, @batch.recipe_id %>
+    <%#= f.text_field :id, :value => (@batch.new_record? ? params[:id] :@recipe.id ) %>
   </div>
 
   <div class="form-actions">
     <%= f.button :submit %>
   </div>
 <% end %>
+
+
+
+

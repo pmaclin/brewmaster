@@ -25,11 +25,15 @@
       </div>
       <div class="panel-body">
         <dl>
-          <dt>flavor profile</dt>
+          <div class="col-xs-12 col-sm-6 col-md-4 col-lg-6">
+          <dt>FLAVOR PROFILE</dt>
           <dd><%= beer_style.std_flav_profile %></dd>
-
-          <!-- <dt>Image</dt> -->
-          <dd><%= beer_style.image %></dd>
+          </div>
+          <div class="col-xs-12 col-sm-6 col-md-4 col-lg-6">
+          <dt>POPULAR EXAMPLE</dt>
+          <%= link_to image_tag(beer_style.image), beer_style_url(beer_style.id), :class => "thumbnail" %>
+          <dd><%#= beer_style.image %></dd>
+          </div>
 
         </dl>
         <div class="btn-group btn-group-justified">

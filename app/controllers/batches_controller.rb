@@ -1,7 +1,7 @@
 class BatchesController < ApplicationController
   before_action :set_batch, only: [:show, :edit, :update, :destroy]
 
-  before_action :current_user_must_own_batch, only:[:edit, :update, :destroy, :show]
+  # before_action :current_user_must_own_batch, only:[:edit, :update, :destroy, :show]
 
   # def create_unique_ids
   #   @batch = Batch.new(recipe_params)
@@ -10,11 +10,15 @@ class BatchesController < ApplicationController
   #     print u
   # end
 
-  def current_user_must_own_batch
-    if current_user != @batch.recipe.user
-        redirect_to :back, :notice => "Dude...you can't do that."
-    end
-  end
+# Something's happening that's inhibiting the showing of the owner's batches, as does on Recipe index. Also, something
+# was inhibiting the adding of batches.  We'll comment out the code below as well as the before_action above to attempt
+# to troubleshoot.
+
+  # def current_user_must_own_batch
+  #   if current_user != @batch.user
+  #       redirect_to :back, :notice => "Dude...you can't do that."
+  #   end
+  # end
 
   # GET /batches
   # GET /batches.json

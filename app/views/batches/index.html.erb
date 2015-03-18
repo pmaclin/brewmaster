@@ -18,7 +18,7 @@
 <div class="row isotope-container">
 <% @batches.each do |batch| %>
   <div class="col-xs-12 col-sm-6 col-md-4 col-lg-6 isotope-item">
-  <%# if batch.user == current_user %>
+  <% if batch.user == current_user %>
     <div class="panel panel-default">
       <div class="panel-heading">
         <h3 class="panel-title">Batch #<%= batch.id %></h3>
@@ -78,7 +78,7 @@
         </div>
       </div>
     </div>
-    <%# end %>
+    <% end %>
   </div>
 <% end %>
 </div>
